@@ -1,0 +1,216 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
+const HeroSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of medical images (10.png to 19.png)
+  const medicalImages = [
+    '/assets/images/10.png',
+    '/assets/images/11.png',
+    '/assets/images/12.png',
+    '/assets/images/13.png',
+    '/assets/images/14.png',
+    '/assets/images/15.png',
+    '/assets/images/16.png',
+    '/assets/images/17.png',
+    '/assets/images/18.png',
+    '/assets/images/19.png',
+  ];
+
+  // Auto-cycle through images for background slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % medicalImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [medicalImages.length]);
+
+  // Animation variants for content
+  const contentVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="relative min-h-screen w-full overflow-hidden pt-16 md:pt-20">
+      {/* Background Image Slideshow - Full Background */}
+      <div className="absolute inset-0">
+        {medicalImages.map((image, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{
+              opacity: index === currentImageIndex ? 1 : 0,
+              scale: index === currentImageIndex ? 1 : 1.1,
+            }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            <Image
+              src={image}
+              alt={`Medical background ${index + 1}`}
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority={index === 0}
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Subtle Gradient Overlay for Better Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1453A6]/50 via-[#1261A6]/40 to-[#04B2D9]/30" />
+      
+      {/* Additional overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/20" />
+
+   
+      {/* Main Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto w-full">
+          <motion.div
+            className="text-center"
+            initial="hidden"
+            animate="visible"
+            variants={contentVariants}
+          >
+            {/* Welcome Badge */}
+            <motion.div
+              className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-8 shadow-lg"
+              variants={itemVariants}
+            >
+              <span className="mr-2">🏥</span>
+              Bienvenue au Centre Diagnostique Vitalife
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg"
+              variants={itemVariants}
+            >
+              Votre Santé,
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-200 drop-shadow-none">
+                Notre Priorité
+              </span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+              variants={itemVariants}
+            >
+              Centre de diagnostic médical moderne offrant des services de qualité en 
+              médecine générale, radiologie, cardiologie et analyses médicales.
+            </motion.p>
+
+            {/* Services Preview */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-4 mb-8"
+              variants={itemVariants}
+            >
+              {[
+                'Médecine Générale',
+                'Radiologie',
+                'Cardiologie',
+                'Traumatologie',
+                'Gastro-entérologie',
+                'Analyses Médicales'
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm border border-white/30 shadow-md"
+                >
+                  {service}
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Call to Action Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-2 justify-center items-center"
+              variants={itemVariants}
+            >
+              <motion.button
+                className="px-8 py-4 bg-gradient-to-r from-[#04B2D9] to-[#06B6D4] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse-glow border border-white/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Prendre Rendez-vous
+              </motion.button>
+              
+              <motion.button
+                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/40 hover:bg-white/30 transition-all duration-300 shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Nos Services
+              </motion.button>
+            </motion.div>
+
+            {/* Stats Section */}
+            <motion.div
+              className="mt-6 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 max-w-4xl mx-auto"
+              variants={itemVariants}
+            >
+              {[
+                { number: '15+', label: 'Années d\'expérience' },
+                { number: '5000+', label: 'Patients satisfaits' },
+                { number: '24/7', label: 'Service d\'urgence' }
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center p-4 md:p-6 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg"
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2 drop-shadow-md">{stat.number}</div>
+                  <div className="text-sm md:text-base text-white/90">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        animate={{
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center shadow-lg">
+          <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default HeroSection;
