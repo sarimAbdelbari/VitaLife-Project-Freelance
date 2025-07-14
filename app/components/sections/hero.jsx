@@ -54,7 +54,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden pt-16 md:pt-20">
+    <section className="relative min-h-screen w-full overflow-hidden pt-12 md:pt-16">
       {/* Background Image Slideshow - Full Background */}
       <div className="absolute inset-0">
         {medicalImages.map((image, index) => (
@@ -88,8 +88,8 @@ const HeroSection = () => {
 
    
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-4 lg:px-6">
+        <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center"
             initial="hidden"
@@ -98,7 +98,7 @@ const HeroSection = () => {
           >
             {/* Welcome Badge */}
             <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-8 shadow-lg"
+              className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-6 shadow-lg"
               variants={itemVariants}
             >
               <span className="mr-2">🏥</span>
@@ -107,7 +107,7 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg"
               variants={itemVariants}
             >
               Votre Santé,
@@ -119,7 +119,7 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <motion.p
-              className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+              className="text-lg md:text-xl text-white/95 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
               variants={itemVariants}
             >
               Centre de diagnostic médical moderne offrant des services de qualité en 
@@ -128,7 +128,7 @@ const HeroSection = () => {
 
             {/* Services Preview */}
             <motion.div
-              className="flex flex-wrap justify-center gap-4 mb-8"
+              className="flex flex-wrap justify-center gap-3 mb-6"
               variants={itemVariants}
             >
               {[
@@ -141,7 +141,7 @@ const HeroSection = () => {
               ].map((service, index) => (
                 <div
                   key={index}
-                  className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm border border-white/30 shadow-md"
+                  className="px-2.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm border border-white/30 shadow-md"
                 >
                   {service}
                 </div>
@@ -154,7 +154,7 @@ const HeroSection = () => {
               variants={itemVariants}
             >
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-[#04B2D9] to-[#06B6D4] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse-glow border border-white/20"
+                className="px-6 py-3 bg-gradient-to-r from-[#04B2D9] to-[#06B6D4] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse-glow border border-white/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -162,7 +162,7 @@ const HeroSection = () => {
               </motion.button>
               
               <motion.button
-                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/40 hover:bg-white/30 transition-all duration-300 shadow-lg"
+                className="px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/40 hover:bg-white/30 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -172,7 +172,7 @@ const HeroSection = () => {
 
             {/* Stats Section */}
             <motion.div
-              className="mt-6 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 max-w-4xl mx-auto"
+              className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto"
               variants={itemVariants}
             >
               {[
@@ -182,9 +182,9 @@ const HeroSection = () => {
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="text-center p-4 md:p-6 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg"
+                  className="text-center p-3 md:p-4 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg"
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2 drop-shadow-md">{stat.number}</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-md">{stat.number}</div>
                   <div className="text-sm md:text-base text-white/90">{stat.label}</div>
                 </div>
               ))}
@@ -193,22 +193,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center shadow-lg">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
-        </div>
-      </motion.div>
     </section>
   );
 };

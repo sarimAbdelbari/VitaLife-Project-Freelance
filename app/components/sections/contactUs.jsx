@@ -198,7 +198,7 @@ const ContactUs = () => {
               <div className="bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg overflow-hidden">
                 <div className="h-96 md:h-[500px]">
                   <iframe
-                    src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=04%20Rue%20Frihi%20Kada,%20Sfisef,%20Algeria&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.990613125435!2d-0.2423984!3d35.2316037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7e35006e6a9b15%3A0xdfba79037b7ccf4b!2sVita%20life!5e0!3m2!1sen!2sdz!4v1752407347466!5m2!1sen!2sdz"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
