@@ -23,7 +23,6 @@ const Navbar = () => {
     { name: 'Accueil', href: '#home' },
     { name: 'À Propos', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Équipe', href: '#team' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -38,7 +37,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div

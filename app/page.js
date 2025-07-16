@@ -14,7 +14,6 @@ export default function Home() {
       {/* Future sections with proper container layout */}
         <section 
         id="home"
-        backgroundColor="bg-gray-50" 
         
         >
        <HeroSection/>
@@ -22,7 +21,6 @@ export default function Home() {
 
         <section 
         id="about"
-        backgroundColor="bg-gray-50" 
         
         >
        <AboutUs/>

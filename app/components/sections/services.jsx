@@ -1,23 +1,24 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const Services = () => {
-  // Animation variants
+  // Animation variants - Fixed for mobile
   const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.15
+        staggerChildren: 0.1
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
@@ -26,7 +27,7 @@ const Services = () => {
   }
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
@@ -40,36 +41,42 @@ const Services = () => {
     {
       icon: "⚕",
       title: "Médecine Générale",
+      image: "/assets/images/services/Healthcare.png",
       description: "Consultations complètes, diagnostics primaires et suivi médical personnalisé pour toute la famille.",
       features: ["Consultation", "Diagnostic", "Suivi médical"]
     },
     {
       icon: "⚛",
+      image: "/assets/images/services/radiologist.png",
       title: "Radiologie",
       description: "Imagerie médicale avancée incluant rayons X, échographies et scanners pour un diagnostic précis.",
       features: ["Rayons X", "Échographie", "Scanner"]
     },
     {
       icon: "🩻",
+      image: "/assets/images/services/Orthopedics.png",
       title: "Traumatologie",
       description: "Traitement spécialisé des blessures, fractures et traumatismes avec équipements modernes.",
       features: ["Fractures", "Blessures", "Rééducation"]
     },
     {
       icon: "♡",
+      image: "/assets/images/services/Cardio.png",
       title: "Cardiologie",
       description: "Diagnostic et suivi des maladies cardiaques avec électrocardiogrammes et examens spécialisés.",
-      features: ["ECG", "Holter", "Échographie cardiaque"]
+      features: ["ECG", "Échographie cardiaque"]
     },
     {
       icon: "◉",
       title: "Gastro-entérologie",
+      image: "/assets/images/services/Gastric.png",
       description: "Examen et traitement des troubles digestifs avec technologies de pointe.",
       features: ["Endoscopie", "Consultation", "Diagnostic"]
     },
     {
       icon: "⊕",
       title: "Analyses Médicales",
+      image: "/assets/images/services/Medical_Report_Analysis.png",
       description: "Laboratoire complet avec résultats rapides et précis en moins de 24 heures.",
       features: ["Analyses sang", "Urines", "Résultats 24h"]
     }
@@ -81,7 +88,7 @@ const Services = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={contentVariants}
         >
           {/* Header Section */}
@@ -123,12 +130,20 @@ const Services = () => {
                 }}
               >
                 {/* Icon */}
-                <div className="flex items-center justify-center mb-4">
+                {/* <div className="flex items-center justify-center mb-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-[#1453A6] to-[#04B2D9] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
                     <span className="text-2xl text-white font-bold">{service.icon}</span>
                   </div>
-                </div>
-
+                </div> */}
+                {service.image && (
+                  <div className="flex items-center justify-center mb-4">
+                    <Image src={service.image} alt={service.title}
+                     className=" object-cover rounded-lg"
+                     width={50}
+                     height={50}
+                     />
+                  </div>
+                )}
                 {/* Content */}
                 <div className="text-center mb-4">
                   <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-[#1453A6] transition-colors duration-300">
@@ -140,22 +155,16 @@ const Services = () => {
                 </div>
 
                 {/* Features */}
-                <div className="space-y-2">
+                <div className="grid grid-cols-3 gap-2">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center justify-center">
-                      <div className="px-3 py-1 bg-[#1453A6]/10 rounded-full text-[#1453A6] text-xs border border-[#1453A6]/20">
+                      <div className="px-3 py-1 bg-[#1453A6]/10 rounded-full text-[#1453A6] text-nowrap text-xs border border-[#1453A6]/20 text-center">
                         {feature}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Hover Effect */}
-                <div className="mt-4 pt-4 border-t border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center">
-                    <span className="text-[#04B2D9] text-sm font-medium">En savoir plus →</span>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -173,9 +182,10 @@ const Services = () => {
             </p>
             
             <motion.button
-              className="px-8 py-4 bg-white text-[#1453A6] font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-white text-[#1453A6] cursor-pointer font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => window.location.href = '#contact'}
             >
               📋 Consulter un Spécialiste
             </motion.button>

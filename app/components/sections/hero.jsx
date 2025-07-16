@@ -9,16 +9,12 @@ const HeroSection = () => {
 
   // Array of medical images (10.png to 19.png)
   const medicalImages = [
-    '/assets/images/10.png',
-    '/assets/images/11.png',
+    '/assets/images/18.png',
     '/assets/images/12.png',
+    '/assets/images/10.png',
     '/assets/images/13.png',
     '/assets/images/14.png',
     '/assets/images/15.png',
-    '/assets/images/16.png',
-    '/assets/images/17.png',
-    '/assets/images/18.png',
-    '/assets/images/19.png',
   ];
 
   // Auto-cycle through images for background slideshow
@@ -30,22 +26,22 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [medicalImages.length]);
 
-  // Animation variants for content
+  // Animation variants for content - Fixed for mobile
   const contentVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
         ease: "easeOut",
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
@@ -93,7 +89,8 @@ const HeroSection = () => {
           <motion.div
             className="text-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
             variants={contentVariants}
           >
             {/* Welcome Badge */}
