@@ -293,19 +293,19 @@ const ContactUs = () => {
 
           {/* Footer with Logo */}
           <motion.div 
-            className="text-center py-12 border-t border-gray-200"
+            className="text-center py-8 border-t border-gray-200"
             variants={itemVariants}
           >
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4">
               <Image
                 src="/assets/logo.png"
                 alt="Vitalife Logo"
-                width={200}
-                height={80}
+                width={350}
+                height={350}
                 className="object-contain"
               />
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-6 text-lg">
               Centre de Diagnostic Médical - Votre santé, notre priorité
             </p>
             <div className="flex justify-center space-x-6">
@@ -315,7 +315,7 @@ const ContactUs = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-600 transition-colors duration-300 w-15 h-15"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

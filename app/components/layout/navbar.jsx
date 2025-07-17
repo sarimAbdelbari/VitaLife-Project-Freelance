@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/20'
           : 'bg-transparent'
@@ -37,8 +37,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-6xl mx-auto ">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0 flex items-center"
@@ -46,15 +46,15 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link href="/" className="flex items-center">
-              <div className="relative  ">
+            <div className="relative my-auto">
                 <Image
                   src={isScrolled ? "/assets/logo.png" : "/assets/whiteLogo.png"}
                   alt="Vitalife Logo"
-                  width={125}
-                  height={125}
-                  className="w-full h-full object-contain transition-all duration-300"
+                  width={180}
+                  height={180}
+                  className="object-contain  transition-all duration-300"
                 />
-              </div>
+            </div>
             </Link>
           </motion.div>
 
@@ -67,6 +67,7 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  className="mb-3"
                 >
                   <Link
                     href={item.href}
@@ -86,13 +87,17 @@ const Navbar = () => {
           {/* Enhanced CTA Button */}
           <div className="hidden md:block">
             <motion.button
-              className={`relative px-8 py-3 rounded-full font-semibold text-sm transition-all duration-300 overflow-hidden ${
+              className={`relative px-8 py-3 rounded-full cursor-pointer font-semibold text-sm transition-all duration-300 overflow-hidden mb-3 ${
                 isScrolled
                   ? 'bg-gradient-to-r from-[#1453A6] via-[#1261A6] to-[#04B2D9] text-white shadow-lg hover:shadow-xl'
                   : 'bg-white/15 backdrop-blur-sm text-white border border-white/30 hover:bg-white/25'
               }`}
+              onClick={() => {
+                window.location.href = '#contact';
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              
             >
               <span className="relative z-10 flex items-center space-x-2">
                 <span>📅</span>
@@ -108,7 +113,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors ${
+              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors mb-3 ${
                 isScrolled
                   ? 'text-gray-700 hover:text-[#1453A6] hover:bg-gray-100'
                   : 'text-white hover:text-white hover:bg-white/10'
@@ -171,8 +176,11 @@ const Navbar = () => {
                 className="pt-2"
               >
                 <button
-                  className="w-full px-4 py-3 text-left text-base font-medium bg-gradient-to-r from-[#1453A6] via-[#1261A6] to-[#04B2D9] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full px-4 py-3 cursor-pointer text-left text-base font-medium bg-gradient-to-r from-[#1453A6] via-[#1261A6] to-[#04B2D9] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                  onClick={() => {
+                    window.location.href = '#contact';
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   <span>📅</span>
                   <span>Prendre Rendez-vous</span>
