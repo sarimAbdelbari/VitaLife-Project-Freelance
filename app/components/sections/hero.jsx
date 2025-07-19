@@ -138,7 +138,7 @@ const HeroSection = () => {
 
    
       {/* Main Content */}
-      <div className="relative z-10 flex items-center my-2 justify-center min-h-screen px-3 sm:px-4 lg:px-6">
+      <div className="relative z-10 flex items-center mt-12 lg:mt-0 justify-center min-h-screen px-3 sm:px-4 lg:px-6">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center relative"
@@ -157,7 +157,7 @@ const HeroSection = () => {
               </span>
             </motion.div> */}
             <motion.div
-              className="inline-flex items-center h-12 absolute -top-15 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-1   rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium shadow-lg"
+              className="inline-flex items-center h-12 absolute -top-8 lg:-top-15 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-1   rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium shadow-lg"
               variants={itemVariants}
             >
               <Image
