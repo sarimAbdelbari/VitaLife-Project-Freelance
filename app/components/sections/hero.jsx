@@ -138,30 +138,35 @@ const HeroSection = () => {
 
    
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-4 lg:px-6">
+      <div className="relative z-10 flex items-center my-2 justify-center min-h-screen px-3 sm:px-4 lg:px-6">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
-            className="text-center"
+            className="text-center relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={contentVariants}
           >
             {/* Welcome Badge */}
+            {/* <motion.div
+              className="inline-flex items-center h-12 px-2 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-6 shadow-lg"
+              variants={itemVariants}
+            >
+              <span className="text-md">
+              Bienvenue au Centre Diagnostique Vitalife
+              </span>
+            </motion.div> */}
             <motion.div
-              className="inline-flex items-center h-12 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-6 shadow-lg"
+              className="inline-flex items-center h-12 absolute -top-15 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-1   rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium shadow-lg"
               variants={itemVariants}
             >
               <Image
                 src="/assets/whiteLogo.png"
                 alt="Vitalife Logo"
-                width={100}
-                height={100}
-                className="object-contain mr-3 "
+                width={180}
+                height={180}
+                className="object-contain mt-1 mr-2  "
               />
-              <span className="text-md">
-              Bienvenue au Centre Diagnostique Vitalife
-              </span>
             </motion.div>
 
             {/* Main Heading */}
