@@ -38,7 +38,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="max-w-6xl mx-auto ">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 pr-2">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0 flex items-center"
@@ -52,7 +52,7 @@ const Navbar = () => {
                   alt="Vitalife Logo"
                   width={180}
                   height={180}
-                  className="object-contain  transition-all duration-300"
+                  className="object-contain  transition-all duration-300 pr-7 lg:pr-0" 
                 />
             </div>
             </Link>
