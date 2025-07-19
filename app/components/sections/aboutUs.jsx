@@ -188,7 +188,7 @@ const AboutUs = () => {
               {uniqueHighlights.map((highlight, index) => (
                 <motion.div
                   key={index}
-                  className="relative group"
+                  className="relative group "
                   whileHover={{ scale: 1.03, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
