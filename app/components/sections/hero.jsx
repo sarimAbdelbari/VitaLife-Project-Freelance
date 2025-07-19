@@ -50,7 +50,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden pt-12 md:pt-16">
+    <section className="relative min-h-screen w-full overflow-hidden ">
       {/* Background Image Slideshow - Full Background */}
       <div className="absolute inset-0">
         {medicalImages.map((image, index) => (
@@ -171,7 +171,7 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="text-3xl  md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4 drop-shadow-lg"
+              className="text-2xl  md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-1 sm:mb-2 md:mb-3 drop-shadow-lg"
               variants={itemVariants}
             >
               Votre Santé,
@@ -183,7 +183,7 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <motion.p
-              className="text-md  md:text-lg text-white/95 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+              className="text-    md:text-base text-white/95 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
               variants={itemVariants}
             >
               Centre de diagnostic médical moderne offrant des services de qualité en 
@@ -205,7 +205,7 @@ const HeroSection = () => {
               ].map((service, index) => (
                 <div
                   key={index}
-                  className="px-2.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm md:text-base border border-white/30 shadow-md"
+                  className="px-2.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-xs md:text-base border border-white/30 shadow-md"
                 >
                   {service}
                 </div>
@@ -218,7 +218,7 @@ const HeroSection = () => {
               variants={itemVariants}
             >
               <motion.button
-                className="px-6 py-3 bg-gradient-to-r text-base md:text-lg lg:text-xl cursor-pointer from-[#04B2D9] to-[#06B6D4] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse-glow border border-white/20"
+                className="px-6 py-3 bg-gradient-to-r text-xs md:text-base lg:text-lg cursor-pointer from-[#04B2D9] to-[#06B6D4] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse-glow border border-white/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
@@ -229,7 +229,7 @@ const HeroSection = () => {
               </motion.button>
               
               <motion.button
-                className="px-6 py-3 text-base md:text-lg lg:text-xl bg-white/20 cursor-pointer backdrop-blur-sm text-white font-semibold rounded-lg border border-white/40 hover:bg-white/30 transition-all duration-300 shadow-lg"
+                className="px-6 py-3 text-xs md:text-base lg:text-lg bg-white/20 cursor-pointer backdrop-blur-sm text-white font-semibold rounded-lg border border-white/40 hover:bg-white/30 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
@@ -254,8 +254,8 @@ const HeroSection = () => {
                   key={index}
                   className="text-center p-3 md:p-4 bg-white/15 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg flex flex-col items-center justify-center"
                 >
-                  {stat.number && <div className="text-base md:text-xl lg:text-2xl font-bold text-white mb-0.5 sm:mb-1 drop-shadow-md">{stat.number}</div>}
-                  <div className="text-base  lg:text-lg text-white/90">{stat.label}</div>
+                  {stat.number && <div className="text-sm md:text-base lg:text-lg font-bold text-white mb-0.5 sm:mb-1 drop-shadow-md">{stat.number}</div>}
+                  <div className="text-sm  lg:text-lg text-white/90">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
