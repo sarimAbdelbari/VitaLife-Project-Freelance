@@ -1,7 +1,7 @@
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
-
+import LoadingScreen from "@/components/layout/loadingScreen";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -26,8 +26,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased`}
       >
+      <LoadingScreen>
           <Navbar />
           {children}
+      </LoadingScreen >
       </body>
     </html>
   );

@@ -104,3 +104,26 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.pulse-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.ecg-line {
+  filter: drop-shadow(0 0 6px rgba(20, 83, 166, 0.2));
+  transition: filter 0.3s ease;
+}
+
+.pulse-container:hover .ecg-line {
+  filter: drop-shadow(0 0 12px rgba(4, 178, 217, 0.4));
+}
+
+.heartbeat-path {
+  stroke: var(--primary-blue-lighter);
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.pulse-container:hover .heartbeat-path {
+  stroke: var(--accent-cyan);
+  stroke-width: 3.5;
+}
