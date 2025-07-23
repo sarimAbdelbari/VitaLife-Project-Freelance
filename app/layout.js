@@ -15,9 +15,19 @@ const robotoMono = Roboto_Mono({
 export const metadata = {
   title: "Vitalife - Centre de Diagnostic Médical",
   description: "Centre de diagnostic médical moderne offrant des services de qualité en médecine générale, radiologie, cardiologie et analyses médicales.",
+  keywords: "centre médical, diagnostic médical, radiologie, cardiologie, analyses médicales, échographie, médecine générale, centre de santé, imagerie médicale",
   icons: {
     icon: "/assets/topLogo.webp"
-  }
+  },
+  openGraph: {
+    title: "Vitalife - Centre de Diagnostic Médical",
+    description: "Centre de diagnostic médical moderne offrant des services de qualité en médecine générale, radiologie, cardiologie et analyses médicales.",
+    locale: "fr-FR",
+    type: "website",
+    url: "https://vitalife.dz",
+    siteName: "Vitalife",
+    images: "/assets/topLogo.webp",
+  },
 };
 
 export default function RootLayout({ children }) {
