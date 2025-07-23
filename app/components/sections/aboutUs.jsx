@@ -141,7 +141,7 @@ const AboutUs = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl blur opacity-30"></div>
               <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-2xl border-2 border-gray-200">
                 <Image
-                  src="/assets/images/AboutUs.webp"
+                  src="/assets/images/AboutUs.jpg"
                   alt="Vitalife Centre de Diagnostic Médical - Médecin professionnel"
                   fill
                   className="object-cover object-center"
