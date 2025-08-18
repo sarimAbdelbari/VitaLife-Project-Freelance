@@ -72,7 +72,7 @@ const AboutUs = () => {
               <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 ml-3"></div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Vitalife - Centre de
+              Vitalife-Medical - Centre de
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                 Diagnostic Médical

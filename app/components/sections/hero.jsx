@@ -103,7 +103,7 @@ const HeroSection = () => {
       >
         <Image
           src="/assets/whiteLogo.png"
-          alt="Vitalife Logo Watermark"
+          alt="Vitalife-Medical Logo Watermark"
           width={120}
           height={120}
           className="object-contain filter blur-[0.5px]"
@@ -129,7 +129,7 @@ const HeroSection = () => {
       >
         <Image
           src="/assets/whiteLogo.png"
-          alt="Vitalife Logo Watermark"
+          alt="Vitalife-Medical Logo Watermark"
           width={120}
           height={120}
           className="object-contain filter blur-[0.5px]"
@@ -138,7 +138,7 @@ const HeroSection = () => {
 
    
       {/* Main Content */}
-      <div className="relative z-10 flex items-center mt-12 lg:mt-0 justify-center min-h-screen px-3 sm:px-4 lg:px-6">
+      <div className="relative z-10 flex items-center mt-12  2xl:mt-0 justify-center min-h-screen px-3 sm:px-4 lg:px-6">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center relative"
@@ -147,22 +147,14 @@ const HeroSection = () => {
             viewport={{ once: true, amount: 0.1 }}
             variants={contentVariants}
           >
-            {/* Welcome Badge */}
-            {/* <motion.div
-              className="inline-flex items-center h-12 px-2 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium mb-6 shadow-lg"
-              variants={itemVariants}
-            >
-              <span className="text-md">
-              Bienvenue au Centre Diagnostique Vitalife
-              </span>
-            </motion.div> */}
+     
             <motion.div
               className="inline-flex items-center h-12 absolute -top-8 lg:-top-15 left-1/2 -translate-x-1/2 -translate-y-1/2 pt-1   rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white/95 text-sm font-medium shadow-lg"
               variants={itemVariants}
             >
               <Image
                 src="/assets/whiteLogo.png"
-                alt="Vitalife Logo"
+                alt="Vitalife-Medical Logo"
                 width={180}
                 height={180}
                 className="object-contain mt-1 mr-2 w-[160px] h-[160px] md:w-[180px] md:h-[180px] "

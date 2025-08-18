@@ -129,12 +129,7 @@ const Services = () => {
                   transition: { duration: 0.3 }
                 }}
               >
-                {/* Icon */}
-                {/* <div className="flex items-center justify-center mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#1453A6] to-[#04B2D9] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                    <span className="text-2xl text-white font-bold">{service.icon}</span>
-                  </div>
-                </div> */}
+               
                 {service.image && (
                   <div className="flex items-center justify-center mb-4">
                     <Image src={service.image} alt={service.title}
